@@ -31,7 +31,10 @@ echo "Done."
 sleep 0.7
 echo "type 'pp' to use the command."
 sleep 1.4
-echo "To check for updates type 'sudo pp --update'"
+echo "To check for updates type 'sudo pp --update'."
+sleep 1.5
+echo "To re-setup type 'sudo pp --resetup'."
+echo "FOR MORE INTO TYPE 'pp --help'."
 sleep 2.3
 echo "You can find all the essential files and"
 echo "the main config in '/.pp_essential'."
