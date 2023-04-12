@@ -27,6 +27,14 @@ max_width=$max_pp_width
 length=0
 a_length=""
 
+function sudocheck
+{
+  if [[ $EUID -ne 0 ]]; then
+    echo "pp: to use this operator/funtion,"
+    echo "you will need to use 'sudo '"
+    echo "or run the command as root."
+  fi
+}
 function fatal
 {
   mv /bin/pp /bin/pp1
@@ -69,10 +77,12 @@ elif [[ "$1" == "--help" ]]; then
   echo "'--config' - Edit config (using nano)"
   echo "/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/"
 elif [[ "$1" == "--resetup" ]]; then
+  sudocheck
   resetup
 elif [[ "$1" == "--version" ]]; then
   echo "pp version: ${versionpp}"
 elif [[ "$1" == "--config" ]]; then
+  sudocheck
   echo "Opening pp config..."
   sleep 2
   nano /.pp_essential/pp_config.conf
