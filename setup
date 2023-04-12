@@ -11,15 +11,33 @@ fi
 #WARNING: ALL CODE IN THE DIRECTORY not-sus IS OWNED BY 8a0k37.
 #COPYING THE CODE OR USING IT FOR COMERCIAL PURPOSES IS STRICTLY PROHIBITED!
 echo "Setting up pp..."
+sleep 1.3
+echo "Enter your username to setup"
+echo "the permissions correctly."
+read -p "Username: " username
 mv pp /bin
+mkdir /.pp_essential
+mv .pp_config.conf pp_config.conf
+mv pp_config.conf /.pp_essential
+chmod u+x /bin/pp
+chmod u+wr /.pp_essential/pp-config.conf
+chmod -wrx /.pp_essential
+chmod u+wrx /.pp_essential
+chown ${username}:${username} /.pp_essential
+chown ${username}:${username} /.pp_essential/pp_config.conf
+echo "Using '${username}'..."
 sleep 2
 echo "Done."
 sleep 0.7
 echo "type 'pp' to use the command."
 sleep 1.4
-echo "To check for updates type 'sudo ./.update'"
-echo "when in the 'not-sus/' folder."
+echo "To check for updates type 'sudo pp --update'"
 sleep 2.3
+echo "You can find all the essential files and"
+echo "the main config in '/.pp_essential'."
+sleep 0.8
+echo "(Use 'sudo cd /.pp_essential')"
+sleep 2
 echo "Thank you for using pp."
 sleep 2
 echo "- Your pp"
