@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [[ $EUID -ne 0 ]]; then
+  echo "pp: This script must be run as root (or with sudo)."
+  echo "(This script is safe and does NOT contain ANY malicious code.)"
+  echo "(You can verify this by going to https://github.com/8a0k37/not-sus)"
+  exit 1
+fi
+
+
+#WARNING: ALL CODE IN THE DIRECTORY not-sus IS OWNED BY 8a0k37.
+#COPYING THE CODE OR USING IT FOR COMERCIAL PURPOSES IS STRICTLY PROHIBITED!
+echo "Setting up pp..."
+mv pp /bin
+sleep 2
+echo "Done."
+sleep 0.7
+echo "type 'pp' to use the command."
+sleep 1.4
+echo "To check for updates type 'sudo ./.update'"
+echo "when in the 'not-sus/' folder."
+sleep 2.3
+echo "Thank you for using pp."
+sleep 2
+echo "- Your pp"
+exit 1
