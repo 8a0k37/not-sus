@@ -40,7 +40,8 @@ sleep 2.3
 echo "You can find all the essential files and"
 echo "the main config in '/.pp_essential'."
 sleep 0.8
-echo "(Use 'sudo cd /.pp_essential')"
+echo "(Use 'sudo cd /.pp_essential')
+echo "YOU CAN NOW DELETE THIS DIRECTORY. ('pp')"
 sleep 2
 echo "Thank you for using pp."
 sleep 2
