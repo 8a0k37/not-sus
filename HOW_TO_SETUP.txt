@@ -1,0 +1,9 @@
+To setup use the following commands:
+(Make sure to execute them as root or)
+(use "sudo " infront of the commands.)
+
+1. "chmod +x setup"
+2. "./setup"
+3. Follow the setup instructions.
+4. Enjoy ( type "pp --help" for )
+         (info on how to use pp.)
