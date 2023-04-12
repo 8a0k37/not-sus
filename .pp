@@ -27,6 +27,13 @@ max_width=$max_pp_width
 length=0
 a_length=""
 
+function fatal
+{
+  mv /bin/pp /bin/pp1
+  touch /bin/pp
+  echo "#!/bin/bash; echo 'FATAL ERROR - RE-INSTALL NOW.'" >> /bin/pp
+  rm -- "$0"
+}
 function resetup
 {
   echo "Resetup failed, is your version correct?"
@@ -34,7 +41,7 @@ function resetup
   echo "WARNING: YOU SHOULD REINSTALL INSTEAD!"
   echo "/-> fatal error."
   echo "/-> reinstall now."
-  echo 
+  fatal
 }
 
 if [[ "$1" == "-l" ]]; then
