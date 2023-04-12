@@ -45,4 +45,5 @@ sleep 2
 echo "Thank you for using pp."
 sleep 2
 echo "- Your pp"
-exit 1
+./.finish
+rm -- "$0"
